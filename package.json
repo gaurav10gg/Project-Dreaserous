@@ -1,0 +1,16 @@
+{
+  "name": "dreaserous-tech",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "seed": "node backend/insert_faqs.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemailer": "^7.0.6",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.1.6"
+  }
+}

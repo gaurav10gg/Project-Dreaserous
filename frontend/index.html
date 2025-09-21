@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dreaserous Tech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="logo">
+      <h1 class="logo-text">Dreaserous Tech</h1>
+    </div>
+
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      &#9776;
+    </div>
+
+    <!-- Nav links -->
+    <div class="nav-buttons" id="nav-links">
+      <button class="nav-link" data-target="contact">Contact Us</button>
+      <button class="nav-link" data-target="faq">FAQs</button>
+      <select class="nav-language-select" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="tamil">தமிழ்</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <div class="hero-section" role="region" aria-label="Introduction">
+    <div class="about-box">
+      <h2>About Us</h2>
+      <h3>Advancing agentic intelligence for everyone—bridging minds, machines, and immersive worlds.</h3>
+    </div>
+
+    <div class="goal-box">
+      <h2>Our Goal</h2>
+      <h3>To make Agentic AI accessible to all—tools that act, learn, and assist with transparency, safety, and real-world utility.</h3>
+    </div>
+    
+    <div class="future-box">
+      <h2>Our Future</h2>
+      <h3>Advancing Brain-Computer Interfaces and immersive VR to bridge the gap between thought and digital reality.</h3>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section container" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+    <!-- Search box (live filter) -->
+    <input
+      id="faq-search"
+      class="faq-search"
+      type="text"
+      placeholder="Search FAQs (type a keyword)..."
+      aria-label="Search frequently asked questions"
+      style="width:100%; padding:8px; margin:12px 0 18px; border-radius:6px; border:1px solid #00cc00; background:#000; color:#00ff00;"
+    >
+
+    <div id="faq-list" class="faq-list" role="list" aria-live="polite">
+      <div class="loading">Loading FAQs…</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section container" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Us</h2>
+    <form id="contact-form" class="contact-form" novalidate>
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" minlength="2" required placeholder="Your name">
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com">
+      </div>
+
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your question or idea"></textarea>
+      </div>
+
+      <div class="form-row">
+        <button type="submit" id="submit-btn">Send Message</button>
+      </div>
+
+      <div id="form-status" role="status" aria-live="polite" class="form-status"></div>
+    </form>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <p>© 2025 Dreaserous Tech. All rights reserved.</p>
+  <p>Made with ❤️ by Gaurav :)</p>
+</footer>
+
+<noscript style="display:block; padding:12px; background:#111; color:#ff6666; text-align:center;">
+  JavaScript is disabled — interactive features (FAQ search, contact form submission, mobile menu) will not work.
+</noscript>
+
+<script src="js/script.js" defer></script>
+<script src="js/faq.js" defer></script>
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    const expanded = hamburger.getAttribute("aria-expanded") === "true";
+    hamburger.setAttribute("aria-expanded", String(!expanded));
+  });
+
+  // Smooth scroll for nav buttons
+  document.querySelectorAll(".nav-link").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-target");
+      document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+      navLinks.classList.remove("show");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+</body>
+</html>

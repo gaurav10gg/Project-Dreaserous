@@ -1,0 +1,313 @@
+/* ---------- Global Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  color: #00FF00;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #000;
+  flex-wrap: wrap;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 0 0 4px #00ff00, 0 0 8px rgba(0, 255, 0, 0.6);
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+.logo-text:hover {
+  color: #66ff66;
+  text-shadow: 0 0 6px #66ff66, 0 0 12px rgba(102, 255, 102, 0.7);
+  transform: scale(1.03);
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.nav-buttons button,
+.nav-language-select {
+  background: transparent;
+  color: #00CC00;
+  border: 2px solid #00CC00;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-buttons button:hover,
+.nav-language-select:hover,
+.nav-language-select:focus {
+  background: #00CC00;
+  color: #000;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* ---------- Glow Animation ---------- */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #00ff00; }
+  50% { box-shadow: 0 0 20px #00ff00; }
+  100% { box-shadow: 0 0 5px #00ff00; }
+}
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;   /* 🔥 force vertical layout */
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  background: url("assets/bg5.jpg") no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.6));
+}
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Info Boxes ---------- */
+.about-box, .goal-box, .future-box {
+  border: 2px solid #00FF00;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.3);
+  transition: all 0.3s ease;
+  flex: 1 1 300px;
+}
+.about-box h2, .goal-box h2, .future-box h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #00FF00;
+  transition: color 0.3s ease;
+}
+.about-box h3, .goal-box h3, .future-box h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #ccffcc;
+}
+.about-box:hover, .goal-box:hover, .future-box:hover {
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  transform: scale(1.03);
+}
+.about-box:hover h2, .goal-box:hover h2, .future-box:hover h2 {
+  color: #66ff66;
+}
+.about-box, .goal-box, .future-box {
+  flex: unset;   /* remove the auto expansion */
+  width: 90%;
+  max-width: 450px;
+}
+
+
+/* ---------- FAQ Section ---------- */
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.section h2 {
+  color: #00FF00;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+.faq-item {
+  border: 1px solid rgba(0,255,0,0.2);
+  background: rgba(0,0,0,0.6);
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.faq-question {
+  font-weight: bold;
+  color: #ccffcc;
+  position: relative;
+}
+.faq-question::after {
+  content: "➕";
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-question::after {
+  content: "➖";
+}
+.faq-answer {
+  margin-top: 8px;
+  color: #e6ffe6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 220ms ease, opacity 180ms ease;
+  opacity: 0;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* ---------- Contact Form ---------- */
+.contact-form {
+  display: grid;
+  gap: 14px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+label {
+  color: #99ff99;
+  font-size: 0.9rem;
+}
+input, textarea, select {
+  background: #000;
+  color: #dfffd8;
+  border: 1px solid #00cc00;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #66ff66;
+  box-shadow: 0 0 8px rgba(0,255,0,0.15);
+}
+#submit-btn {
+  background: #00cc00;
+  color: #000;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#submit-btn:hover {
+  background: #00ff00;
+}
+#submit-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.form-status {
+  margin-top: 6px;
+  color: #ccffcc;
+  min-height: 18px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #000;
+  color: #00FF00;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  border-top: 2px solid #00FF00;
+}
+.footer p { margin: 5px 0; }
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 1024px) {
+  .hero-section { flex-direction: column; }
+}
+@media (max-width: 768px) {
+  .about-box, .goal-box, .future-box {
+    max-width: 95%;
+    padding: 15px;
+  }
+  .faq-item { padding: 12px; }
+  .nav-buttons { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 480px) {
+  .logo-text { font-size: 1.2rem; }
+  #submit-btn { width: 100%; }
+}
+/* ---------- Hamburger ---------- */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #00ff00;
+  cursor: pointer;
+  z-index: 1001; /* make sure it's above the menu */
+}
+
+/* ---------- Mobile Styles ---------- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-buttons {
+    display: none; /* hide by default */
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 60px; /* adjust based on navbar height */
+    right: 0;
+    width: 220px; /* adjust if needed */
+    padding: 15px;
+    border-left: 2px solid #00ff00;
+    border-bottom: 2px solid #00ff00;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-buttons.show {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-link,
+  .nav-language-select {
+    width: 100%;
+  }
+}
