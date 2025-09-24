@@ -17,25 +17,8 @@
 
 ## File setup 
 
-Project-Dreaserous/
-│
-├─ frontend/                   # Frontend code
-│   ├─ index.html
-│   ├─ style.css
-│   └─ js/
-│       ├─ script.js
-│       └─ faq.js
-│
-├─ backend/                    # Backend code
-│   ├─ server.js
-│   ├─ package.json
-│   └─ data.db                 # SQLite database with 5+ sample FAQs
-│
-├─ README.md                   # Project documentation & setup instructions
-└─ demo.mp4                    # Optional: 2–3 minute screen recording of project
 
-
-
+<img width="810" height="477" alt="image" src="https://github.com/user-attachments/assets/80e7b24d-db28-47a7-9d12-85d02d8f2df0" />
 
 
  
