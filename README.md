@@ -20,5 +20,19 @@
 
 <img width="810" height="477" alt="image" src="https://github.com/user-attachments/assets/80e7b24d-db28-47a7-9d12-85d02d8f2df0" />
 
+## How to Setup 
+**1. Clone the repository**
 
+git clone https://github.com/gaurav10gg/Project-Dreaserous.git
+cd Project-Dreaserous
+
+**2. Install backend dependencies**
+cd backend
+npm install
+
+**3.Start backend server**
+node server.js
+
+**4.Open the local host link **
+Eg . http://localhost:4000
  
