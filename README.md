@@ -36,8 +36,18 @@ npm install
 
 node server.js
 
-**4.Open the local host link**
+**4.Visit**
 
 Eg . http://localhost:4000
 
  
+ ## AI Tools Used
+ -ChatGpt : Used to write my backend code and just to improvise my frontend code .
+
+ # What I Learned
+
+Although I already had a basic grasp of HTML, CSS, and JavaScript, this project allowed me to apply those skills in a real, full-stack context. Building the frontend was incredibly rewarding—I enjoyed designing the interface and making it interactive, seeing my ideas come to life.  
+
+On the backend side, I learned how Node.js and Express.js work, including handling API requests, managing data, and connecting the frontend to a database. Combining both frontend and backend gave me a clear understanding of how data flows in a web application and how the different layers communicate.  
+
+This project not only strengthened my technical skills but also improved my problem-solving and project-structuring abilities. Overall, it was a highly rewarding experience that boosted my confidence in full-stack development and prepared me for building more complex applications in the future.
