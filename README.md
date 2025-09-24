@@ -33,6 +33,6 @@ npm install
 **3.Start backend server**
 node server.js
 
-**4.Open the local host link **
+**4.Open the local host link**
 Eg . http://localhost:4000
  
